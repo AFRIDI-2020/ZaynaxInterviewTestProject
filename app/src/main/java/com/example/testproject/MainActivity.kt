@@ -10,7 +10,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        previout_amount.paintFlags = previout_amount.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        lineThroughPreviousAmount();
 
+        val bottomSheetFragment = BottomSheetFragment()
+        shoe1Layout.setOnClickListener {
+            bottomSheetFragment.show(supportFragmentManager,"bottom sheet fragment")
+        }
+    }
+
+    private fun lineThroughPreviousAmount() {
+        previout_amount.paintFlags = previout_amount.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
     }
 }
