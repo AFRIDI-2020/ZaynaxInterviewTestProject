@@ -33,17 +33,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                app:cardBackgroundColor="@color/dark_green"
-                app:cardCornerRadius="50dp"
-                app:layout_constraintEnd_toEndOf="@id/cart_icon"
-                app:layout_constraintTop_toTopOf="@id/cart_icon">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/card_notification_count_layout_bg"
+                    app:layout_constraintEnd_toEndOf="@id/cart_icon"
+                    app:layout_constraintTop_toTopOf="@id/cart_icon">
 
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
@@ -57,7 +53,7 @@
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -124,20 +120,16 @@
                 android:src="@drawable/cover_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/chevron_card_view"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                app:cardBackgroundColor="@color/transparent_black1"
-                app:cardCornerRadius="50dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:id="@+id/chevron_layout"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/round_layout_transparent_black1">
 
                     <ImageView
                         android:layout_width="24dp"
@@ -147,7 +139,6 @@
 
                 </RelativeLayout>
 
-            </androidx.cardview.widget.CardView>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
@@ -156,9 +147,9 @@
                 android:background="@drawable/search_menu_on_cover_pic_layout"
                 android:paddingStart="10dp"
                 android:paddingEnd="10dp"
-                app:layout_constraintBottom_toBottomOf="@id/chevron_card_view"
+                app:layout_constraintBottom_toBottomOf="@id/chevron_layout"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/chevron_card_view">
+                app:layout_constraintTop_toTopOf="@id/chevron_layout">
 
                 <ImageView
                     android:id="@+id/search_line_icon"
@@ -447,6 +438,7 @@
 
 
             <LinearLayout
+                android:id="@+id/shoeLayout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -454,7 +446,7 @@
                 app:layout_constraintTop_toBottomOf="@id/color_count"
                 app:layout_constraintStart_toStartOf="@id/color_count"
                 app:layout_constraintEnd_toEndOf="@id/share"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="5dp">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
@@ -586,6 +578,65 @@
 
 
             </LinearLayout>
+
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/ash3"
+                app:layout_constraintTop_toBottomOf="@+id/shoeLayout"
+                android:layout_marginTop="20dp"/>
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/fast_delivery_icon"
+                app:layout_constraintTop_toBottomOf="@+id/view2"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@id/shoeLayout"
+                android:id="@+id/shipping_icon"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/shipping"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/shipping"
+                android:textSize="13sp"
+                android:fontFamily="@font/segoeui"
+                android:textStyle="bold"
+                android:textColor="@color/transparent_black1"
+                app:layout_constraintTop_toTopOf="@id/shipping_icon"
+                app:layout_constraintStart_toEndOf="@id/shipping_icon"
+                app:layout_constraintBottom_toBottomOf="@id/shipping_icon"
+                android:layout_marginStart="12dp"/>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/estimated_delivery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Estimated Delivery: 7-15 days"
+                android:textColor="@color/ash4"
+                app:layout_constraintTop_toTopOf="@+id/shipping"
+                app:layout_constraintEnd_toEndOf="@id/share"
+                android:textSize="14sp"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/shipping_icon"
+                app:layout_constraintStart_toStartOf="@id/shipping_icon"
+                app:layout_constraintEnd_toEndOf="@+id/estimated_delivery"
+                android:padding="12dp"
+                android:layout_marginTop="12dp">
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/shipping_spinner"/>
+
+            </RelativeLayout>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
