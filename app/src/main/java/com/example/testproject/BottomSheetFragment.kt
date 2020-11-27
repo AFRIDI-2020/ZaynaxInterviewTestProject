@@ -24,7 +24,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
     lateinit var sizeAdapter: SizeAdapter
     lateinit var list: MutableList<Size>
-    var itemQuantity: Int = 0
+    var itemQuantity: Int = 1
     private val images = intArrayOf(
         R.drawable.cover_image,
         R.drawable.image2,
@@ -60,7 +60,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         removeItem.setOnClickListener {
-            if (itemQuantity > 0) {
+            if (itemQuantity > 1) {
                 itemQuantity--
                 tv_quantity.text = itemQuantity.toString()
             }
@@ -78,17 +78,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         }
 
         imageSwitcher?.setImageResource(images[imageIndex])
-        val imgIn = AnimationUtils.loadAnimation(
-            context, android.R.anim.slide_in_left
-        )
 
-        imageSwitcher?.inAnimation = imgIn
-
-        val imgOut = AnimationUtils.loadAnimation(
-            context, android.R.anim.slide_out_right
-        )
-
-        imageSwitcher?.outAnimation = imgOut
 
         prev_imsg_layout.setOnClickListener {
             if (imageIndex - 1 >= 0) {
@@ -156,6 +146,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
 
         //spinner
         setUpSpinner()
+
 
     }
 

@@ -295,7 +295,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:text="@string/size"
             android:textColor="@color/black2"
             android:textSize="@dimen/_13sdp"
@@ -306,7 +306,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/sizeRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_50sdp"
+            android:layout_height="@dimen/_55sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@id/size"
@@ -406,7 +406,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
             android:background="@drawable/spinner_border"
-            android:padding="@dimen/_12sdp"
+            android:padding="@dimen/_8sdp"
             app:layout_constraintEnd_toEndOf="@+id/estimated_delivery"
             app:layout_constraintStart_toStartOf="@id/shipping_icon"
             app:layout_constraintTop_toBottomOf="@id/shipping_icon">

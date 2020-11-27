@@ -34,7 +34,6 @@ class SizeAdapter(val context: Context, val sizeList: MutableList<Size>) :
         holder.itemView.sizeLayout.setOnClickListener {
             selectedItem = position
             notifyDataSetChanged()
-            Toast.makeText(context, sizeList[position].sizeName, Toast.LENGTH_SHORT).show()
         }
 
         if(selectedItem == position){

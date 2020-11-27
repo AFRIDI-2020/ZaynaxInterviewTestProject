@@ -97,852 +97,940 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:id="@+id/scrollView"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinateLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_layout"
         app:layout_constraintTop_toTopOf="parent">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_300sdp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:contentScrim="@color/white"
+                app:layout_scrollFlags="exitUntilCollapsed|scroll">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/cover_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_300sdp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cover_image"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/chevron_layout"
+                        android:layout_width="@dimen/_36sdp"
+                        android:layout_height="@dimen/_36sdp"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@drawable/round_layout_transparent_black1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_chevron_left" />
+
+                    </RelativeLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:background="@drawable/search_menu_on_cover_pic_layout"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/chevron_layout"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/chevron_layout">
+
+                        <ImageView
+                            android:id="@+id/search_line_icon"
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:src="@drawable/search_line"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+
+                        <View
+                            android:id="@+id/view1"
+                            android:layout_width="@dimen/_2sdp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:background="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/search_line_icon"
+                            app:layout_constraintStart_toEndOf="@id/search_line_icon"
+                            app:layout_constraintTop_toTopOf="@id/search_line_icon" />
+
+
+                        <ImageView
+                            android:layout_width="@dimen/_24sdp"
+                            android:layout_height="@dimen/_24sdp"
+                            android:layout_marginStart="@dimen/_10sdp"
+                            android:src="@drawable/ic_more_vert"
+                            app:layout_constraintStart_toEndOf="@id/view1"
+                            app:layout_constraintTop_toTopOf="@id/view1" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_collapseMode="pin"
+                    app:popupTheme="@style/Theme.AppCompat.Light">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/chevron_left_toolbar"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:src="@drawable/ic_chevron_left_black"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginStart="@dimen/_15sdp"/>
+
+                        <ImageView
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:src="@drawable/ic_more_black"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_marginEnd="@dimen/_10sdp"
+                            android:id="@+id/more_icon_black"/>
+
+                        <View
+                            android:layout_width="@dimen/_1sdp"
+                            android:layout_height="@dimen/_17sdp"
+                            android:background="@color/black"
+                            app:layout_constraintTop_toTopOf="@id/more_icon_black"
+                            app:layout_constraintEnd_toStartOf="@id/more_icon_black"
+                            app:layout_constraintBottom_toBottomOf="@id/more_icon_black"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:id="@+id/viewInToolbar"/>
+
+                        <ImageView
+                            android:id="@+id/search_black_icon"
+                            android:layout_width="@dimen/_20sdp"
+                            android:layout_height="@dimen/_20sdp"
+                            android:src="@drawable/ic_search_black"
+                            app:layout_constraintTop_toTopOf="@id/more_icon_black"
+                            app:layout_constraintEnd_toStartOf="@id/viewInToolbar"
+                            app:layout_constraintBottom_toBottomOf="@id/viewInToolbar"
+                            android:layout_marginEnd="@dimen/_5sdp"/>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="@dimen/_20sdp">
-
-            <ImageView
-                android:id="@+id/cover_image"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_300sdp"
-                android:scaleType="fitXY"
-                android:src="@drawable/cover_image"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <RelativeLayout
-                android:id="@+id/chevron_layout"
-                android:layout_width="@dimen/_36sdp"
-                android:layout_height="@dimen/_36sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@drawable/round_layout_transparent_black1"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_chevron_left" />
-
-            </RelativeLayout>
-
+            android:clipToPadding="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:background="@drawable/search_menu_on_cover_pic_layout"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
-                app:layout_constraintBottom_toBottomOf="@id/chevron_layout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@id/chevron_layout">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/_20sdp">
 
-                <ImageView
-                    android:id="@+id/search_line_icon"
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:src="@drawable/search_line"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/bdt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:fontFamily="@font/segeo_ui_bold"
+                    android:text="@string/bdt"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_20sdp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/segeo_ui_bold"
+                    android:text="2,850"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/bdt"
+                    app:layout_constraintTop_toTopOf="@+id/bdt" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/previout_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:fontFamily="@font/segeo_ui_bold"
+                    android:text="BDT. 3050"
+                    android:textColor="@color/ash"
+                    android:textSize="@dimen/_15sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/amount"
+                    app:layout_constraintStart_toEndOf="@id/amount"
+                    app:layout_constraintTop_toTopOf="@+id/amount" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8sdp"
+                    android:background="@drawable/offer_layout_bg"
+                    android:paddingStart="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_8sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    app:layout_constraintBottom_toBottomOf="@id/previout_amount"
+                    app:layout_constraintStart_toEndOf="@id/previout_amount"
+                    app:layout_constraintTop_toTopOf="@id/previout_amount">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segeo_ui_bold"
+                        android:text="25%"
+                        android:textColor="@color/light_green" />
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:id="@+id/share"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:src="@drawable/share_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/previout_amount"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/previout_amount" />
+
+                <ImageView
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:src="@drawable/like_icon"
+                    app:layout_constraintEnd_toStartOf="@id/share"
+                    app:layout_constraintTop_toTopOf="@id/share" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tuinanle_sandal_description"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/tunanle_sandals_description"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="@id/share"
+                    app:layout_constraintStart_toStartOf="@id/bdt"
+                    app:layout_constraintTop_toBottomOf="@id/bdt" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:fontFamily="@font/segio_ui_semibold"
+                    android:text="4.8"
+                    android:textColor="@color/light_green"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toStartOf="@id/tuinanle_sandal_description"
+                    app:layout_constraintTop_toBottomOf="@id/tuinanle_sandal_description" />
+
+                <ImageView
+                    android:id="@+id/star"
+                    android:layout_width="@dimen/_13sdp"
+                    android:layout_height="@dimen/_13sdp"
+                    android:src="@drawable/ic_star"
+                    app:layout_constraintBottom_toBottomOf="@id/rating"
+                    app:layout_constraintStart_toEndOf="@id/rating"
+                    app:layout_constraintTop_toTopOf="@id/rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/rating_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="85"
+                    android:textColor="@color/dark_ash"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/star"
+                    app:layout_constraintTop_toTopOf="@id/rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/ratings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/ratings"
+                    android:textColor="@color/dark_ash"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/rating_count"
+                    app:layout_constraintTop_toTopOf="@id/rating_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/review_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="98"
+                    android:textColor="@color/dark_ash"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/ratings"
+                    app:layout_constraintTop_toTopOf="@id/ratings" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/reviews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/reviews"
+                    android:textColor="@color/dark_ash"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/review_count"
+                    app:layout_constraintTop_toTopOf="@id/review_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/order_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="80"
+                    android:textColor="@color/dark_ash"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/reviews"
+                    app:layout_constraintTop_toTopOf="@id/reviews" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/orders"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/orders"
+                    android:textColor="@color/dark_ash"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintStart_toEndOf="@id/order_count"
+                    app:layout_constraintTop_toTopOf="@id/order_count" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/color_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_25sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="2"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/rating"
+                    app:layout_constraintTop_toBottomOf="@id/rating" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/colors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/colors"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/color_count"
+                    app:layout_constraintTop_toTopOf="@id/color_count" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/comma"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/segoeui"
+                    android:text=","
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/colors"
+                    app:layout_constraintTop_toTopOf="@id/colors" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/size_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="4"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/comma"
+                    app:layout_constraintTop_toTopOf="@id/comma" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/sizes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_5sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/sizes"
+                    android:textColor="@color/black2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/size_count"
+                    app:layout_constraintTop_toTopOf="@id/size_count" />
+
+
+                <LinearLayout
+                    android:id="@+id/shoeLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:orientation="horizontal"
+                    android:weightSum="5"
+                    app:layout_constraintEnd_toEndOf="@id/share"
+                    app:layout_constraintStart_toStartOf="@id/color_count"
+                    app:layout_constraintTop_toBottomOf="@id/color_count">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_weight="1"
+                        app:cardCornerRadius="@dimen/_2sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/shoe1Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/cardview_layout_shoe"
+                            android:elevation="@dimen/_2sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="@dimen/_65sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/shoe1" />
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/shoe2Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/cardview_layout_shoe"
+                            android:elevation="@dimen/_2sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="@dimen/_65sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/shoe1" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/shoe3Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/cardview_layout_shoe"
+                            android:elevation="@dimen/_2sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="@dimen/_65sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/shoe1" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/shoe4Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/cardview_layout_shoe"
+                            android:elevation="@dimen/_2sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="@dimen/_65sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/shoe1" />
+
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_70sdp"
+                        android:layout_weight="1">
+
+                        <RelativeLayout
+                            android:id="@+id/shoe5Layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="@dimen/_5sdp"
+                            android:layout_marginBottom="@dimen/_5sdp"
+                            android:background="@drawable/cardview_layout_shoe"
+                            android:elevation="@dimen/_2sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_70sdp"
+                                android:layout_height="@dimen/_65sdp"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/shoe1" />
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
 
 
                 <View
-                    android:id="@+id/view1"
-                    android:layout_width="@dimen/_2sdp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:background="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@id/search_line_icon"
-                    app:layout_constraintStart_toEndOf="@id/search_line_icon"
-                    app:layout_constraintTop_toTopOf="@id/search_line_icon" />
-
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/shoeLayout" />
 
                 <ImageView
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/ic_more_vert"
-                    app:layout_constraintStart_toEndOf="@id/view1"
-                    app:layout_constraintTop_toTopOf="@id/view1" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/bdt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:fontFamily="@font/segeo_ui_bold"
-                android:text="@string/bdt"
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_20sdp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cover_image" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:fontFamily="@font/segeo_ui_bold"
-                android:text="2,850"
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_20sdp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/bdt"
-                app:layout_constraintTop_toTopOf="@+id/bdt" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/previout_amount"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:fontFamily="@font/segeo_ui_bold"
-                android:text="BDT. 3050"
-                android:textColor="@color/ash"
-                android:textSize="@dimen/_15sdp"
-                app:layout_constraintBottom_toBottomOf="@id/amount"
-                app:layout_constraintStart_toEndOf="@id/amount"
-                app:layout_constraintTop_toTopOf="@+id/amount" />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
-                android:background="@drawable/offer_layout_bg"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_2sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:paddingBottom="@dimen/_2sdp"
-                app:layout_constraintBottom_toBottomOf="@id/previout_amount"
-                app:layout_constraintStart_toEndOf="@id/previout_amount"
-                app:layout_constraintTop_toTopOf="@id/previout_amount">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/segeo_ui_bold"
-                    android:text="25%"
-                    android:textColor="@color/light_green" />
-
-            </RelativeLayout>
-
-
-            <ImageView
-                android:id="@+id/share"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-                android:src="@drawable/share_icon"
-                app:layout_constraintBottom_toBottomOf="@+id/previout_amount"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/previout_amount" />
-
-            <ImageView
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:src="@drawable/like_icon"
-                app:layout_constraintEnd_toStartOf="@id/share"
-                app:layout_constraintTop_toTopOf="@id/share" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/tuinanle_sandal_description"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/tunanle_sandals_description"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintEnd_toEndOf="@id/share"
-                app:layout_constraintStart_toStartOf="@id/bdt"
-                app:layout_constraintTop_toBottomOf="@id/bdt" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/segio_ui_semibold"
-                android:text="4.8"
-                android:textColor="@color/light_green"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toStartOf="@id/tuinanle_sandal_description"
-                app:layout_constraintTop_toBottomOf="@id/tuinanle_sandal_description" />
-
-            <ImageView
-                android:id="@+id/star"
-                android:layout_width="@dimen/_13sdp"
-                android:layout_height="@dimen/_13sdp"
-                android:src="@drawable/ic_star"
-                app:layout_constraintBottom_toBottomOf="@id/rating"
-                app:layout_constraintStart_toEndOf="@id/rating"
-                app:layout_constraintTop_toTopOf="@id/rating" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/rating_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="85"
-                android:textColor="@color/dark_ash"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toEndOf="@id/star"
-                app:layout_constraintTop_toTopOf="@id/rating" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/ratings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/ratings"
-                android:textColor="@color/dark_ash"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toEndOf="@id/rating_count"
-                app:layout_constraintTop_toTopOf="@id/rating_count" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/review_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="98"
-                android:textColor="@color/dark_ash"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toEndOf="@id/ratings"
-                app:layout_constraintTop_toTopOf="@id/ratings" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/reviews"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/reviews"
-                android:textColor="@color/dark_ash"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toEndOf="@id/review_count"
-                app:layout_constraintTop_toTopOf="@id/review_count" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/order_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_20sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="80"
-                android:textColor="@color/dark_ash"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toEndOf="@id/reviews"
-                app:layout_constraintTop_toTopOf="@id/reviews" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/orders"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/orders"
-                android:textColor="@color/dark_ash"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintStart_toEndOf="@id/order_count"
-                app:layout_constraintTop_toTopOf="@id/order_count" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/color_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_25sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="2"
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/rating"
-                app:layout_constraintTop_toBottomOf="@id/rating" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/colors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/colors"
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/color_count"
-                app:layout_constraintTop_toTopOf="@id/color_count" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/comma"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/segoeui"
-                android:text=","
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/colors"
-                app:layout_constraintTop_toTopOf="@id/colors" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/size_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="4"
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/comma"
-                app:layout_constraintTop_toTopOf="@id/comma" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/sizes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/sizes"
-                android:textColor="@color/black2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@id/size_count"
-                app:layout_constraintTop_toTopOf="@id/size_count" />
-
-
-            <LinearLayout
-                android:id="@+id/shoeLayout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:orientation="horizontal"
-                android:weightSum="5"
-                app:layout_constraintEnd_toEndOf="@id/share"
-                app:layout_constraintStart_toStartOf="@id/color_count"
-                app:layout_constraintTop_toBottomOf="@id/color_count">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:layout_weight="1"
-                    app:cardCornerRadius="@dimen/_2sdp">
-
-                    <RelativeLayout
-                        android:id="@+id/shoe1Layout"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginEnd="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp"
-                        >
-
-                        <ImageView
-                            android:layout_width="@dimen/_70sdp"
-                            android:layout_height="@dimen/_65sdp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shoe1" />
-
-
-                    </RelativeLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:layout_weight="1">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginEnd="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp">
-
-                        <ImageView
-                            android:layout_width="@dimen/_70sdp"
-                            android:layout_height="@dimen/_65sdp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shoe1" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:layout_weight="1">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginEnd="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp">
-
-                        <ImageView
-                            android:layout_width="@dimen/_70sdp"
-                            android:layout_height="@dimen/_65sdp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shoe1" />
-
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:layout_weight="1">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginEnd="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp">
-
-                        <ImageView
-                            android:layout_width="@dimen/_70sdp"
-                            android:layout_height="@dimen/_65sdp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shoe1" />
-
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:layout_weight="1">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp">
-
-                        <ImageView
-                            android:layout_width="@dimen/_70sdp"
-                            android:layout_height="@dimen/_65sdp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shoe1" />
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-            </LinearLayout>
-
-
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/shoeLayout" />
-
-            <ImageView
-                android:id="@+id/shipping_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:src="@drawable/fast_delivery_icon"
-                app:layout_constraintStart_toStartOf="@id/shoeLayout"
-                app:layout_constraintTop_toBottomOf="@+id/view2" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/shipping"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/shipping"
-                android:textColor="@color/transparent_black1"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/shipping_icon"
-                app:layout_constraintStart_toEndOf="@id/shipping_icon"
-                app:layout_constraintTop_toTopOf="@id/shipping_icon" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/estimated_delivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Estimated Delivery: 7-15 days"
-                android:textColor="@color/ash4"
-                android:textSize="@dimen/_13sdp"
-                app:layout_constraintEnd_toEndOf="@id/share"
-                app:layout_constraintTop_toTopOf="@+id/shipping" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/spinner_layout"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:background="@drawable/spinner_border"
-                android:padding="@dimen/_8sdp"
-                app:layout_constraintEnd_toEndOf="@+id/estimated_delivery"
-                app:layout_constraintStart_toStartOf="@id/shipping_icon"
-                app:layout_constraintTop_toBottomOf="@id/shipping_icon">
-
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/segoeui"
-                    android:text="@string/zDrop_premium_shipping"
-                    android:textColor="@color/transparent_black_2"
-                    android:textSize="@dimen/_13sdp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/drop_down_icon"
+                    android:id="@+id/shipping_icon"
                     android:layout_width="@dimen/_18sdp"
                     android:layout_height="@dimen/_18sdp"
-                    android:src="@drawable/ic_arrow_drop_down"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/fast_delivery_icon"
+                    app:layout_constraintStart_toStartOf="@id/shoeLayout"
+                    app:layout_constraintTop_toBottomOf="@+id/view2" />
 
                 <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/cost_bdt"
+                    android:id="@+id/shipping"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
                     android:fontFamily="@font/segoeui"
-                    android:text="@string/Cost_bdt"
+                    android:text="@string/shipping"
+                    android:textColor="@color/transparent_black1"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/shipping_icon"
+                    app:layout_constraintStart_toEndOf="@id/shipping_icon"
+                    app:layout_constraintTop_toTopOf="@id/shipping_icon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/estimated_delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Estimated Delivery: 7-15 days"
+                    android:textColor="@color/ash4"
+                    android:textSize="@dimen/_13sdp"
+                    app:layout_constraintEnd_toEndOf="@id/share"
+                    app:layout_constraintTop_toTopOf="@+id/shipping" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/spinner_layout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@drawable/spinner_border"
+                    android:padding="@dimen/_8sdp"
+                    app:layout_constraintEnd_toEndOf="@+id/estimated_delivery"
+                    app:layout_constraintStart_toStartOf="@id/shipping_icon"
+                    app:layout_constraintTop_toBottomOf="@id/shipping_icon">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/zDrop_premium_shipping"
+                        android:textColor="@color/transparent_black_2"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/drop_down_icon"
+                        android:layout_width="@dimen/_18sdp"
+                        android:layout_height="@dimen/_18sdp"
+                        android:src="@drawable/ic_arrow_drop_down"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cost_bdt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoeui"
+                        android:text="@string/Cost_bdt"
+                        android:textColor="@color/transparent_black_2"
+                        android:textSize="@dimen/_13sdp"
+                        app:layout_constraintEnd_toStartOf="@id/drop_down_icon"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner_layout" />
+
+                <ImageView
+                    android:id="@+id/specification_icon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/ic_specification_icon"
+                    app:layout_constraintStart_toStartOf="@id/spinner_layout"
+                    app:layout_constraintTop_toBottomOf="@id/view3" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/specification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/specification"
                     android:textColor="@color/transparent_black_2"
                     android:textSize="@dimen/_13sdp"
-                    app:layout_constraintEnd_toStartOf="@id/drop_down_icon"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/specification_icon"
+                    app:layout_constraintStart_toEndOf="@id/specification_icon"
+                    app:layout_constraintTop_toTopOf="@id/specification_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/specification"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintTop_toTopOf="@id/specification" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/specification_icon" />
+
+                <ImageView
+                    android:id="@+id/review_badge_icon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/review_badge_icon"
+                    app:layout_constraintStart_toStartOf="@id/specification_icon"
+                    app:layout_constraintTop_toBottomOf="@id/view4" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/reviews_badge_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/reviews"
+                    android:textColor="@color/transparent_black_2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/review_badge_icon"
+                    app:layout_constraintStart_toEndOf="@id/review_badge_icon"
+                    app:layout_constraintTop_toTopOf="@id/review_badge_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/reviews_badge_text"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintTop_toTopOf="@id/reviews_badge_text" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/review_badge_icon" />
+
+
+                <ImageView
+                    android:id="@+id/how_to_order_icon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/ic_how_to_order_icon"
+                    app:layout_constraintStart_toStartOf="@id/specification_icon"
+                    app:layout_constraintTop_toBottomOf="@id/view5" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/how_to_order"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/how_to_order"
+                    android:textColor="@color/transparent_black_2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/how_to_order_icon"
+                    app:layout_constraintStart_toEndOf="@id/how_to_order_icon"
+                    app:layout_constraintTop_toTopOf="@id/how_to_order_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/how_to_order"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintTop_toTopOf="@id/how_to_order" />
+
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/how_to_order_icon" />
+
+                <ImageView
+                    android:id="@+id/faq_icon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/faq_icon"
+                    app:layout_constraintStart_toStartOf="@id/specification_icon"
+                    app:layout_constraintTop_toBottomOf="@id/view6" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/faq"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/faq"
+                    android:textColor="@color/transparent_black_2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/faq_icon"
+                    app:layout_constraintStart_toEndOf="@id/faq_icon"
+                    app:layout_constraintTop_toTopOf="@id/faq_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/faq"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintTop_toTopOf="@id/faq" />
+
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/faq_icon" />
+
+                <ImageView
+                    android:id="@+id/wholesale_icon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/ic_wholesale_icon"
+                    app:layout_constraintStart_toStartOf="@id/specification_icon"
+                    app:layout_constraintTop_toBottomOf="@id/view7" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/wholesale_inquiry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/wholesale_inquiry"
+                    android:textColor="@color/transparent_black_2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/wholesale_icon"
+                    app:layout_constraintStart_toEndOf="@id/wholesale_icon"
+                    app:layout_constraintTop_toTopOf="@id/wholesale_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/wholesale_inquiry"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintTop_toTopOf="@id/wholesale_inquiry" />
+
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_2sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:background="@color/ash3"
+                    app:layout_constraintTop_toBottomOf="@+id/wholesale_icon" />
+
+                <ImageView
+                    android:id="@+id/description_icon"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:src="@drawable/ic_description_icon"
+                    app:layout_constraintStart_toStartOf="@id/specification_icon"
+                    app:layout_constraintTop_toBottomOf="@id/view8" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/description"
+                    android:textColor="@color/transparent_black_2"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/description_icon"
+                    app:layout_constraintStart_toEndOf="@id/description_icon"
+                    app:layout_constraintTop_toTopOf="@id/description_icon" />
+
+                <ImageView
+                    android:layout_width="@dimen/_16sdp"
+                    android:layout_height="@dimen/_16sdp"
+                    android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/description"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintTop_toTopOf="@id/description" />
+
+                <ImageView
+                    android:id="@+id/image2"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_300sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/image2"
+                    app:layout_constraintEnd_toEndOf="@id/spinner_layout"
+                    app:layout_constraintStart_toStartOf="@id/description_icon"
+                    app:layout_constraintTop_toBottomOf="@id/description_icon" />
+
+                <ImageView
+                    android:id="@+id/image3"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_230sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/iamge3"
+                    app:layout_constraintEnd_toEndOf="@id/image2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@id/image2"
+                    app:layout_constraintTop_toBottomOf="@id/image2" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/segoeui"
+                    android:text="@string/view_full_description"
+                    android:textColor="@color/transparent_black1"
+                    android:textSize="@dimen/_13sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@id/image2"
+                    app:layout_constraintStart_toStartOf="@id/image2"
+                    app:layout_constraintTop_toBottomOf="@id/image3" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:id="@+id/view3"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/spinner_layout" />
+        </androidx.core.widget.NestedScrollView>
 
-            <ImageView
-                android:id="@+id/specification_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:src="@drawable/ic_specification_icon"
-                app:layout_constraintStart_toStartOf="@id/spinner_layout"
-                app:layout_constraintTop_toBottomOf="@id/view3" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/specification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/specification"
-                android:textColor="@color/transparent_black_2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/specification_icon"
-                app:layout_constraintStart_toEndOf="@id/specification_icon"
-                app:layout_constraintTop_toTopOf="@id/specification_icon" />
-
-            <ImageView
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="@id/specification"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                app:layout_constraintTop_toTopOf="@id/specification" />
-
-            <View
-                android:id="@+id/view4"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/specification_icon" />
-
-            <ImageView
-                android:id="@+id/review_badge_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:src="@drawable/review_badge_icon"
-                app:layout_constraintStart_toStartOf="@id/specification_icon"
-                app:layout_constraintTop_toBottomOf="@id/view4" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/reviews_badge_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/reviews"
-                android:textColor="@color/transparent_black_2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/review_badge_icon"
-                app:layout_constraintStart_toEndOf="@id/review_badge_icon"
-                app:layout_constraintBottom_toBottomOf="@id/review_badge_icon"/>
-
-            <ImageView
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="@id/reviews_badge_text"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                app:layout_constraintTop_toTopOf="@id/reviews_badge_text" />
-
-            <View
-                android:id="@+id/view5"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/review_badge_icon" />
-
-
-            <ImageView
-                android:id="@+id/how_to_order_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:src="@drawable/ic_how_to_order_icon"
-                app:layout_constraintStart_toStartOf="@id/specification_icon"
-                app:layout_constraintTop_toBottomOf="@id/view5" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/how_to_order"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/how_to_order"
-                android:textColor="@color/transparent_black_2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/how_to_order_icon"
-                app:layout_constraintStart_toEndOf="@id/how_to_order_icon"
-                app:layout_constraintBottom_toBottomOf="@id/how_to_order_icon"/>
-
-            <ImageView
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="@id/how_to_order"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                app:layout_constraintTop_toTopOf="@id/how_to_order" />
-
-
-            <View
-                android:id="@+id/view6"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/how_to_order_icon"/>
-
-            <ImageView
-                android:id="@+id/faq_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:src="@drawable/faq_icon"
-                app:layout_constraintStart_toStartOf="@id/specification_icon"
-                app:layout_constraintTop_toBottomOf="@id/view6" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/faq"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/faq"
-                android:textColor="@color/transparent_black_2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/faq_icon"
-                app:layout_constraintStart_toEndOf="@id/faq_icon"
-                app:layout_constraintBottom_toBottomOf="@id/faq_icon"/>
-
-            <ImageView
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="@id/faq"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                app:layout_constraintTop_toTopOf="@id/faq" />
-
-
-            <View
-                android:id="@+id/view7"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/faq_icon"/>
-
-            <ImageView
-                android:id="@+id/wholesale_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:src="@drawable/ic_wholesale_icon"
-                app:layout_constraintStart_toStartOf="@id/specification_icon"
-                app:layout_constraintTop_toBottomOf="@id/view7" />
-
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/wholesale_inquiry"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/wholesale_inquiry"
-                android:textColor="@color/transparent_black_2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/wholesale_icon"
-                app:layout_constraintStart_toEndOf="@id/wholesale_icon"
-                app:layout_constraintBottom_toBottomOf="@id/wholesale_icon"/>
-
-            <ImageView
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="@id/wholesale_inquiry"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                app:layout_constraintTop_toTopOf="@id/wholesale_inquiry" />
-
-
-            <View
-                android:id="@+id/view8"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_2sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:background="@color/ash3"
-                app:layout_constraintTop_toBottomOf="@+id/wholesale_icon"/>
-
-            <ImageView
-                android:id="@+id/description_icon"
-                android:layout_width="@dimen/_18sdp"
-                android:layout_height="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                android:src="@drawable/ic_description_icon"
-                app:layout_constraintStart_toStartOf="@id/specification_icon"
-                app:layout_constraintTop_toBottomOf="@id/view8" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_12sdp"
-                android:fontFamily="@font/segoeui"
-                android:text="@string/description"
-                android:textColor="@color/transparent_black_2"
-                android:textSize="@dimen/_13sdp"
-                android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/description_icon"
-                app:layout_constraintStart_toEndOf="@id/description_icon"
-                app:layout_constraintBottom_toBottomOf="@id/description_icon"/>
-
-            <ImageView
-                android:layout_width="@dimen/_16sdp"
-                android:layout_height="@dimen/_16sdp"
-                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
-                app:layout_constraintBottom_toBottomOf="@id/description"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                app:layout_constraintTop_toTopOf="@id/description" />
-
-            <ImageView
-                android:id="@+id/image2"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_300sdp"
-                android:scaleType="fitXY"
-                app:layout_constraintStart_toStartOf="@id/description_icon"
-                app:layout_constraintTop_toBottomOf="@id/description_icon"
-                app:layout_constraintEnd_toEndOf="@id/spinner_layout"
-                android:src="@drawable/image2"
-                android:layout_marginTop="@dimen/_15sdp"/>
-
-            <ImageView
-                android:id="@+id/image3"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_230sdp"
-                android:scaleType="fitXY"
-                android:layout_marginTop="@dimen/_15sdp"
-                android:src="@drawable/iamge3"
-                app:layout_constraintEnd_toEndOf="@id/image2"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@id/image2"
-                app:layout_constraintTop_toBottomOf="@id/image2" />
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_13sdp"
-                android:textColor="@color/transparent_black1"
-                android:fontFamily="@font/segoeui"
-                android:textStyle="bold"
-                android:text="@string/view_full_description"
-                android:layout_marginTop="@dimen/_20sdp"
-                app:layout_constraintTop_toBottomOf="@id/image3"
-                app:layout_constraintStart_toStartOf="@id/image2"
-                app:layout_constraintEnd_toEndOf="@id/image2"/>
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
