@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/bottom_layout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="@dimen/_45sdp"
         android:orientation="horizontal"
         android:weightSum="10"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,17 +121,17 @@
 
             <RelativeLayout
                 android:id="@+id/chevron_layout"
-                android:layout_width="@dimen/_36sdp"
-                android:layout_height="@dimen/_36sdp"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/round_layout_transparent_black1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:layout_centerInParent="true"
                     android:src="@drawable/ic_chevron_left" />
 
@@ -140,19 +140,19 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/_40sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="10dp"
                 android:background="@drawable/search_menu_on_cover_pic_layout"
-                android:paddingStart="@dimen/_10sdp"
-                android:paddingEnd="@dimen/_10sdp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
                 app:layout_constraintBottom_toBottomOf="@id/chevron_layout"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/chevron_layout">
 
                 <ImageView
                     android:id="@+id/search_line_icon"
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/search_line"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -161,9 +161,9 @@
 
                 <View
                     android:id="@+id/view1"
-                    android:layout_width="@dimen/_2sdp"
+                    android:layout_width="2dp"
                     android:layout_height="0dp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginStart="10dp"
                     android:background="@color/white"
                     app:layout_constraintBottom_toBottomOf="@id/search_line_icon"
                     app:layout_constraintStart_toEndOf="@id/search_line_icon"
@@ -171,9 +171,9 @@
 
 
                 <ImageView
-                    android:layout_width="@dimen/_24sdp"
-                    android:layout_height="@dimen/_24sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="10dp"
                     android:src="@drawable/ic_more_vert"
                     app:layout_constraintStart_toEndOf="@id/view1"
                     app:layout_constraintTop_toTopOf="@id/view1" />
@@ -199,7 +199,7 @@
                 android:id="@+id/amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/segeo_ui_bold"
                 android:text="2,850"
                 android:textColor="@color/black2"
@@ -213,7 +213,7 @@
                 android:id="@+id/previout_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginStart="8dp"
                 android:fontFamily="@font/segeo_ui_bold"
                 android:text="BDT. 3050"
                 android:textColor="@color/ash"
@@ -225,12 +225,12 @@
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/offer_layout_bg"
-                android:paddingStart="@dimen/_8sdp"
-                android:paddingTop="@dimen/_2sdp"
-                android:paddingEnd="@dimen/_8sdp"
-                android:paddingBottom="@dimen/_2sdp"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
                 app:layout_constraintBottom_toBottomOf="@id/previout_amount"
                 app:layout_constraintStart_toEndOf="@id/previout_amount"
                 app:layout_constraintTop_toTopOf="@id/previout_amount">
@@ -240,6 +240,7 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/segeo_ui_bold"
                     android:text="25%"
+                    android:textSize="@dimen/_15sdp"
                     android:textColor="@color/light_green" />
 
             </RelativeLayout>
@@ -448,7 +449,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1"
                     app:cardCornerRadius="@dimen/_2sdp">
 
@@ -460,8 +461,7 @@
                         android:layout_marginEnd="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp"
-                        >
+                        android:elevation="@dimen/_2sdp">
 
                         <ImageView
                             android:layout_width="@dimen/_70sdp"
@@ -477,7 +477,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1">
 
                     <RelativeLayout
@@ -501,33 +501,7 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
-                    android:layout_weight="1">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:layout_marginEnd="@dimen/_5sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp">
-
-                        <ImageView
-                            android:layout_width="@dimen/_70sdp"
-                            android:layout_height="@dimen/_65sdp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/shoe1" />
-
-
-                    </RelativeLayout>
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
+                    android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1">
 
                     <RelativeLayout
@@ -553,7 +527,33 @@
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
-                    android:layout_height="@dimen/_70sdp"
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:background="@drawable/cardview_layout_shoe"
+                        android:elevation="@dimen/_2sdp">
+
+                        <ImageView
+                            android:layout_width="@dimen/_70sdp"
+                            android:layout_height="@dimen/_65sdp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/shoe1" />
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/_80sdp"
                     android:layout_weight="1">
 
                     <RelativeLayout
@@ -562,7 +562,7 @@
                         android:layout_marginTop="@dimen/_5sdp"
                         android:layout_marginBottom="@dimen/_5sdp"
                         android:background="@drawable/cardview_layout_shoe"
-                        android:elevation="@dimen/_2sdp">
+                        android:elevation="@dimen/_5sdp">
 
                         <ImageView
                             android:layout_width="@dimen/_70sdp"
@@ -615,7 +615,7 @@
                 android:layout_height="wrap_content"
                 android:text="Estimated Delivery: 7-15 days"
                 android:textColor="@color/ash4"
-                android:textSize="@dimen/_13sdp"
+                android:textSize="@dimen/_14sdp"
                 app:layout_constraintEnd_toEndOf="@id/share"
                 app:layout_constraintTop_toTopOf="@+id/shipping" />
 
@@ -625,7 +625,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
                 android:background="@drawable/spinner_border"
-                android:padding="@dimen/_8sdp"
+                android:padding="@dimen/_12sdp"
                 app:layout_constraintEnd_toEndOf="@+id/estimated_delivery"
                 app:layout_constraintStart_toStartOf="@id/shipping_icon"
                 app:layout_constraintTop_toBottomOf="@id/shipping_icon">
@@ -636,7 +636,7 @@
                     android:fontFamily="@font/segoeui"
                     android:text="@string/zDrop_premium_shipping"
                     android:textColor="@color/transparent_black_2"
-                    android:textSize="@dimen/_13sdp"
+                    android:textSize="@dimen/_14sdp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -655,7 +655,7 @@
                     android:fontFamily="@font/segoeui"
                     android:text="@string/Cost_bdt"
                     android:textColor="@color/transparent_black_2"
-                    android:textSize="@dimen/_13sdp"
+                    android:textSize="@dimen/_14sdp"
                     app:layout_constraintEnd_toStartOf="@id/drop_down_icon"
                     app:layout_constraintTop_toTopOf="parent" />
 
