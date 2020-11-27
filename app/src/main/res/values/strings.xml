@@ -26,5 +26,10 @@
     <string name="color">Color</string>
     <string name="size">Size</string>
     <string name="quantity">Quantity</string>
+    <string-array name="costs">
+        <item>Cost: BDT. 4000</item>
+        <item>Cost: BDT. 3000</item>
+        <item>Cost: BDT. 1000</item>
+    </string-array>
     
 </resources>

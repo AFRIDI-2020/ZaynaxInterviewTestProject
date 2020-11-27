@@ -5,13 +5,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.SpinnerAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.testproject.custom.CostAdapter
 import com.example.testproject.custom.SizeAdapter
+import com.example.testproject.pojoClasses.Cost
 import com.example.testproject.pojoClasses.Size
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.bottom_sheet_fragment.*
 import kotlinx.android.synthetic.main.bottom_sheet_fragment.view.*
+import kotlin.math.cos
+
 
 class BottomSheetFragment : BottomSheetDialogFragment() {
 
@@ -87,11 +94,10 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             if (imageIndex - 1 >= 0) {
                 imageIndex -= 1
                 imageSwitcher?.setImageResource(images[imageIndex])
-                if(imageIndex==0){
+                if (imageIndex == 0) {
                     prev_imsg_layout.visibility = View.INVISIBLE
                     next_img_layout.visibility = View.VISIBLE
-                }
-                else{
+                } else {
                     prev_imsg_layout.visibility = View.VISIBLE
                     next_img_layout.visibility = View.VISIBLE
                 }
@@ -102,53 +108,66 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             if (imageIndex + 1 < images.size) {
                 imageIndex += 1
                 imageSwitcher?.setImageResource(images[imageIndex])
-                if(imageIndex == images.size - 1){
+                if (imageIndex == images.size - 1) {
                     next_img_layout.visibility = View.INVISIBLE
                     prev_imsg_layout.visibility = View.VISIBLE
-                }else{
+                } else {
                     next_img_layout.visibility = View.VISIBLE
                     prev_imsg_layout.visibility = View.VISIBLE
                 }
             }
         }
 
-        if(imageIndex==0){
+        if (imageIndex == 0) {
             prev_imsg_layout.visibility = View.INVISIBLE
         }
 
         img1Layout.setOnClickListener {
             imageSwitcher?.setImageResource(images[0])
-            imageIndex=0
+            imageIndex = 0
             prev_imsg_layout.visibility = View.INVISIBLE
             next_img_layout.visibility = View.VISIBLE
         }
         img2Layout.setOnClickListener {
-            imageIndex=1
+            imageIndex = 1
             imageSwitcher?.setImageResource(images[1])
             next_img_layout.visibility = View.VISIBLE
             prev_imsg_layout.visibility = View.VISIBLE
         }
         img3Layout.setOnClickListener {
-            imageIndex=2
+            imageIndex = 2
             imageSwitcher?.setImageResource(images[2])
             next_img_layout.visibility = View.VISIBLE
             prev_imsg_layout.visibility = View.VISIBLE
         }
         img4Layout.setOnClickListener {
-            imageIndex=3
+            imageIndex = 3
             imageSwitcher?.setImageResource(images[3])
             next_img_layout.visibility = View.VISIBLE
             prev_imsg_layout.visibility = View.VISIBLE
         }
         img5Layout.setOnClickListener {
-            imageIndex=4
+            imageIndex = 4
             imageSwitcher?.setImageResource(images[4])
             next_img_layout.visibility = View.INVISIBLE
             prev_imsg_layout.visibility = View.VISIBLE
         }
 
 
+        //spinner
+        setUpSpinner()
 
+    }
+
+    private fun setUpSpinner() {
+
+        val costList: MutableList<Cost> = mutableListOf()
+        costList.add(Cost("Cost: BDT. 4000"))
+        costList.add(Cost("Cost: BDT. 6000"))
+        costList.add(Cost("Cost: BDT. 8000"))
+
+        val adapter = CostAdapter(context!!,costList)
+        spinner.adapter = adapter
     }
 
     private fun addSizesToSizeList() {
